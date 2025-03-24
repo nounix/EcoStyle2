@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - ÉcoloStyle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-form h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #6b8e23;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .login-form button {
+      background-color: #6b8e23;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    .login-form button:hover {
+      background-color: #5a7c1d;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .links {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    .links a {
+      color: #6b8e23;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-form">
+    <h1>Connexion</h1>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+      <div id="loginError" class="error"></div>
+      <button type="button" onclick="connecterUtilisateur()">Se connecter</button>
+    </form>
+    <div class="links">
+      <p>Pas encore de compte? <a href="creation-compte.html">Créer un compte</a></p>
+    </div>
+  </div>
+
+  <script>
+    function connecterUtilisateur() {
+      const errorElement = document.getElementById('loginError');
+      errorElement.textContent = '';
+      
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      // Validation simple
+      if (!email || !password) {
+        errorElement.textContent = 'Email et mot de passe sont requis';
+        return;
+      }
+
+      // Récupérer tous les utilisateurs enregistrés
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Trouver l'utilisateur correspondant
+      const user = users.find(u => u.email === email && u.mot_de_passe === password);
+
+      if (user) {
+        // Mettre à jour le statut de connexion
+        user.isLoggedIn = true;
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        
+        // Mettre à jour dans la liste des utilisateurs
+        const updatedUsers = users.map(u => 
+          u.email === user.email ? user : u
+        );
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+        // Rediriger vers le profil
+        window.location.href = 'uti.html';
+      } else {
+        errorElement.textContent = 'Email ou mot de passe incorrect';
+      }
+    }
+
+    // Permettre la connexion avec la touche Entrée
+    document.getElementById('loginPassword').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        connecterUtilisateur();
+      }
+    });
+  </script>
+</body>
+</html>
