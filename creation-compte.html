@@ -72,5 +72,27 @@
       <button type="submit">Sauvegarder</button>
     </form>
   </div>
+  <script>
+      // Enregistrer les données dans le localStorage
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Empêcher le rechargement de la page
+
+      // Récupérer les valeurs du formulaire
+      const userData = {
+        nom: document.getElementById('nom').value,
+        prenom: document.getElementById('prenom').value,
+        date_naissance: document.getElementById('date_naissance').value,
+        sexe: document.getElementById('sexe').value,
+        email: document.getElementById('email').value,
+        mot_de_passe: document.getElementById('mot_de_passe').value,
+      };
+
+      // Stocker les données dans le localStorage
+      localStorage.setItem('userData', JSON.stringify(userData));
+
+      // Rediriger vers la page de profil
+      window.location.href = 'profil.html';
+    });
+  </script>
 </body>
 </html>
