@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marques - ÉcoloStyle</title>
+  <!-- Lien vers la police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour tout le texte */
+      background-color: #f4f4f4;
+      color: #333;
+      align-items: center;
+    }
+    header {
+      background-color: #6b8e23;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #006400; /* Couleur au survol */
+      border-radius: 5px;
+    }
+    .content {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .category {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .category h3 {
+      font-size: 1.5rem;
+      color: #6b8e23; /* Couleur du titre */
+    }
+    .category p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 10px 0;
+    }
+    .category button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #6b8e23;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour les boutons */
+      transition: background-color 0.3s;
+    }
+    .category button:hover {
+      background-color: #006400; /* Couleur au survol */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="tut.html">Tutoriels</a>
+      <a href="br.html">Marques</a>
+      <a href="ap.html">À propos</a>
+    </nav>
+  </header>
+  <div class="content" id="home">
+    <h1>Budget abordable</h1>
+    <div class="categories">
+      <!-- Marque 1 : Pact -->
+      <div class="category">
+        <h3>Pact</h3>
+        <p>Pact propose des vêtements éco-responsables à des prix abordables, fabriqués à partir de coton biologique et de matériaux durables.</p>
+        <a href="https://www.wearpact.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+
+      <!-- Marque 2 : Organic Basics -->
+      <div class="category">
+        <h3>Organic Basics</h3>
+        <p>Organic Basics offre des vêtements de base durables et éthiques, conçus pour durer et fabriqués à partir de matériaux respectueux de l'environnement.</p>
+        <a href="https://www.organicbasics.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+
+      <!-- Marque 3 : Vinted -->
+      <div class="category">
+        <h3>Vinted</h3>
+        <p>Vinted est une plateforme de revente de vêtements d'occasion, permettant de trouver des pièces uniques à petit prix tout en réduisant les déchets.</p>
+        <a href="https://www.vinted.fr" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+
+      <!-- Marque 4 : Kiloshop -->
+      <div class="category">
+        <h3>Kiloshop</h3>
+        <p>Kiloshop propose des vêtements vendus au kilo, offrant une alternative économique et écologique à la mode traditionnelle.</p>
+        <a href="https://www.kiloshop.fr" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

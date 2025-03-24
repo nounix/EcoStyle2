@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget élevé - ÉcoloStyle</title>
+  <!-- Lien vers la police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour tout le texte */
+      background-color: #f4f4f4;
+      color: #333;
+      align-items: center;
+    }
+    header {
+      background-color: #6b8e23;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #006400; /* Couleur au survol */
+      border-radius: 5px;
+    }
+    .content {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .category {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .category h3 {
+      font-size: 1.5rem;
+      color: #6b8e23; /* Couleur du titre */
+    }
+    .category p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 10px 0;
+    }
+    .category button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #6b8e23;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour les boutons */
+      transition: background-color 0.3s;
+    }
+    .category button:hover {
+      background-color: #006400; /* Couleur au survol */
+    }
+    .category:nth-child(1) {
+      grid-column: 1;
+    }
+    .category:nth-child(2) {
+      grid-column: 2;
+    }
+    .category:nth-child(3) {
+      grid-column: 1;
+    }
+    .category:nth-child(4) {
+      grid-column: 2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="tut.html">Tutoriels</a>
+      <a href="br.html">Marques</a>
+      <a href="ap.html">À propos</a>
+    </nav>
+  </header>
+  <div class="content" id="home">
+    <h1>Budget élevé</h1>
+    <div class="categories">
+      <div class="category">
+        <h3>Stella McCartney</h3>
+        <p>Stella McCartney est une marque de luxe engagée dans la mode durable et éthique, sans utiliser de cuir ou de fourrure.</p>
+        <a href="https://www.stellamccartney.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+      <div class="category">
+        <h3>Eileen Fisher</h3>
+        <p>Eileen Fisher propose des vêtements intemporels et durables, conçus avec des matériaux écologiques et des pratiques éthiques.</p>
+        <a href="https://www.eileenfisher.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+      <div class="category">
+        <h3>Reformation</h3>
+        <p>Reformation allie style et durabilité avec des vêtements chic et respectueux de l'environnement.</p>
+        <a href="https://www.thereformation.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+      <div class="category">
+        <h3>Filippa K</h3>
+        <p>Filippa K est une marque de mode scandinave axée sur un design minimaliste et des pratiques durables.</p>
+        <a href="https://www.filippa-k.com" target="_blank">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

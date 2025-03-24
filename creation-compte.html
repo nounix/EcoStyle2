@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Création de compte - ÉcoloStyle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .account-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .account-form h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #6b8e23;
+    }
+    .account-form input, .account-form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .account-form button {
+      background-color: #6b8e23;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    .account-form button:hover {
+      background-color: #5a7c1d;
+    }
+  </style>
+</head>
+<body>
+  <div class="account-form">
+    <h1>Création de compte</h1>
+    <form action="index.html" method="GET"> <!-- Redirection vers ac.html -->
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenom" placeholder="Prénom" required>
+      <input type="date" name="date_naissance" placeholder="Date de naissance" required>
+      <select name="sexe" required>
+        <option value="">Sexe</option>
+        <option value="male">Homme</option>
+        <option value="female">Femme</option>
+        <option value="other">Autre</option>
+      </select>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+      <button type="submit">Sauvegarder</button>
+    </form>
+  </div>
+</body>
+</html>

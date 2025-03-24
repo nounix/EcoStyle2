@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ÉcoloStyle - Mode Responsable</title>
+  <!-- Lien vers la police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour tout le texte */
+      color: #333;
+    }
+    header {
+      background-color: #6b8e23;
+      color: white;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      margin-right: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #006400; /* Couleur au survol */
+      border-radius: 5px;
+    }
+    .account-button {
+      background-color: #6b8e23;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour le bouton */
+      transition: background-color 0.3s;
+    }
+    .account-button:hover {
+      background-color: #006400; /* Couleur au survol */
+    }
+    .hero {
+      background-image: url('/Users/noursellimi/Desktop/ei/images/Accueil 1.jpeg'); /* Chemin relatif vers l'image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .section {
+      display: flex;
+      justify-content: space-between; /* Supprime l'espace entre les images */
+      width: 100%; /* Occupe toute la largeur */
+      margin: 0; /* Supprime les marges */
+      padding: 0; /* Supprime le padding */
+    }
+    .section > div {
+      position: relative;
+      width: 50%; /* Chaque image occupe 50% de la largeur */
+    }
+    .section img {
+      width: 100%;
+      height: 50vh; /* Hauteur plus grande pour les images */
+      object-fit: cover; /* Conserve les proportions de l'image */
+      display: block; /* Supprime l'espace sous les images */
+    }
+    .section .content {
+      position: absolute;
+      top: 50%; /* Centrage vertical */
+      left: 50%; /* Centrage horizontal */
+      transform: translate(-50%, -50%); /* Centrage parfait */
+      text-align: center;
+    }
+    .section .content button {
+      padding: 1rem 2rem; /* Bouton plus grand */
+      font-size: 1.2rem; /* Texte plus grand */
+      background-color: #6b8e23; /* Couleur du header */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour les boutons */
+      color: white; /* Couleur du texte comme dans le header */
+      transition: background-color 0.3s; /* Animation au survol */
+    }
+    .section .content button:hover {
+      background-color: #006400; /* Couleur du header au survol */
+    }
+    .full-width {
+      background-image: url('/Users/noursellimi/Desktop/ei/images/shutterstock_1173390337-scaled.jpg'); /* Chemin relatif vers l'image */
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .full-width button {
+      padding: 1rem 2rem; /* Bouton plus grand */
+      font-size: 1.2rem; /* Texte plus grand */
+      background-color: #6b8e23; /* Couleur du header */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour les boutons */
+      color: white; /* Couleur du texte comme dans le header */
+      transition: background-color 0.3s; /* Animation au survol */
+    }
+    .full-width button:hover {
+      background-color: #006400; /* Couleur du header au survol */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ÉcoloStyle</div>
+    <nav>
+      <a href="#home">Accueil</a>
+      <a href="tut.html">Tutoriels</a>
+      <a href="br.html">Marques</a>
+      <a href="ap.html">À propos</a>
+      <button class="account-button" onclick="window.location.href='creation-compte.html'">Créer un compte</button>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <h1>Mode responsable, avenir durable</h1>
+  </div>
+
+  <div class="section">
+    <div>
+      <img src="/Users/noursellimi/Desktop/ei/images/eco-fashion.jpg" alt="Marques"> <!-- Chemin relatif vers l'image -->
+      <div class="content">
+        <button onclick="window.location.href='br.html'">Marques</button>
+      </div>
+    </div>
+    <div>
+      <img src="/Users/noursellimi/Desktop/ei/images/Image-by-Sustainable-Jungle-18.jpg" alt="Tutoriels"> <!-- Chemin relatif vers l'image -->
+      <div class="content">
+        <button onclick="window.location.href='tut.html'">Tutoriels</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-width">
+    <button onclick="window.location.href='ap.html'">À propos de nous</button>
+  </div>
+</body>
+</html>

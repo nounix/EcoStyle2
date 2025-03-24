@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉcoloStyle - Marques Recommandées</title>
+  <!-- Lien vers la police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour tout le texte */
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #6b8e23;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #006400; /* Couleur au survol */
+      border-radius: 5px;
+    }
+    .content {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .category {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .category h3 {
+      font-size: 1.5rem;
+      color: #6b8e23; /* Couleur du titre */
+    }
+    .category p {
+      font-size: 1rem;
+      color: #333; /* Couleur du texte */
+    }
+    .category button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #6b8e23;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif; /* Police Poppins pour les boutons */
+      transition: background-color 0.3s;
+    }
+    .category button:hover {
+      background-color: #006400; /* Couleur au survol */
+    }
+    .category:nth-child(1) {
+      grid-column: 1;
+    }
+    .category:nth-child(2) {
+      grid-column: 2;
+    }
+    .category:nth-child(3) {
+      grid-column: 1;
+    }
+    .category:nth-child(4) {
+      grid-column: 2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="tut.html">Tutoriels</a>
+      <a href="br.html">Marques</a>
+      <a href="ap.html">À propos</a>
+    </nav>
+  </header>
+  <div class="content" id="home">
+    <h1>Marques Recommandées</h1>
+    <p></p>
+    <div class="categories">
+      <div class="category">
+        <h3>Budget abordable (€)</h3>
+        <p>Thrift Shops & Seconde Main (Vinted, Vestiaire Collective, Kiloshop, Emmaüs, etc.)
+            Pact – Coton bio et vêtements basiques abordables
+            Organic Basics – Sous-vêtements et essentiels éco-conçus
+            People Tree – Mode équitable et respectueuse de l’environnement
+            H&M Conscious (⚠️ Greenwashing possible, mais meilleure alternative aux grandes chaînes)</p>
+        <a href="budgetabordable.html">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+      <div class="category">
+        <h3>Budget moyen (€€)</h3>
+        <p>Veja – Sneakers en matériaux recyclés et équitables
+            Patagonia – Vêtements techniques et outdoor éthiques
+            Mud Jeans – Jeans recyclables et en coton bio (option location)
+            Kuyichi – Mode casual et denim en coton bio
+            Armedangels – Marque allemande éthique et stylée
+            Thinking MU – Marque espagnole colorée et responsable</p>
+        <a href="Budgetmoyen.html">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+      <div class="category">
+        <h3>Budget élevé (€€€)</h3>
+        <p>Stella McCartney – Luxe vegan et éco-friendly
+            Eileen Fisher – Mode minimaliste et éthique
+            Reformation – Vêtements tendance fabriqués avec des matériaux recyclés
+            Filippa K – Marque scandinave durable et intemporelle
+            Mara Hoffman – Créations haut de gamme en tissus durables</p>
+        <a href="Budgetélevé.html">
+          <button>En savoir plus</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
