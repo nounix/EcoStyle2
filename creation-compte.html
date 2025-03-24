@@ -48,51 +48,87 @@
       font-size: 1rem;
       margin-top: 10px;
       transition: background-color 0.3s;
+      width: 100%;
     }
     .account-form button:hover {
       background-color: #5a7c1d;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      text-align: left;
     }
   </style>
 </head>
 <body>
   <div class="account-form">
     <h1>Création de compte</h1>
-    <form action="index.html" method="GET"> <!-- Redirection vers ac.html -->
-      <input type="text" name="nom" placeholder="Nom" required>
-      <input type="text" name="prenom" placeholder="Prénom" required>
-      <input type="date" name="date_naissance" placeholder="Date de naissance" required>
-      <select name="sexe" required>
+    <form id="signupForm">
+      <input type="text" id="nom" name="nom" placeholder="Nom" required>
+      <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+      <input type="date" id="date_naissance" name="date_naissance" placeholder="Date de naissance" required>
+      <select id="sexe" name="sexe" required>
         <option value="">Sexe</option>
-        <option value="male">Homme</option>
-        <option value="female">Femme</option>
-        <option value="other">Autre</option>
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+        <option value="Autre">Autre</option>
       </select>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
-      <button type="submit">Sauvegarder</button>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Mot de passe" required>
+      <div id="errorMessage" class="error"></div>
+      <button type="button" onclick="creerCompte()">Sauvegarder</button>
     </form>
+    <p>Déjà un compte? <a href="connexion.html">Se connecter</a></p>
   </div>
-  <script>
-      // Enregistrer les données dans le localStorage
-    document.getElementById('signupForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // Empêcher le rechargement de la page
 
-      // Récupérer les valeurs du formulaire
+  <script>
+    function creerCompte() {
+      const errorElement = document.getElementById('errorMessage');
+      errorElement.textContent = '';
+      
+      // Récupération des valeurs
+      const nom = document.getElementById('nom').value.trim();
+      const prenom = document.getElementById('prenom').value.trim();
+      const dateNaissance = document.getElementById('date_naissance').value;
+      const sexe = document.getElementById('sexe').value;
+      const email = document.getElementById('email').value.trim();
+      const motDePasse = document.getElementById('mot_de_passe').value;
+
+      // Validation simple
+      if (!nom || !prenom || !dateNaissance || !sexe || !email || !motDePasse) {
+        errorElement.textContent = 'Tous les champs sont obligatoires';
+        return;
+      }
+
+      if (motDePasse.length < 6) {
+        errorElement.textContent = 'Le mot de passe doit contenir au moins 6 caractères';
+        return;
+      }
+
+      // Création de l'objet utilisateur
       const userData = {
-        nom: document.getElementById('nom').value,
-        prenom: document.getElementById('prenom').value,
-        date_naissance: document.getElementById('date_naissance').value,
-        sexe: document.getElementById('sexe').value,
-        email: document.getElementById('email').value,
-        mot_de_passe: document.getElementById('mot_de_passe').value,
+        nom,
+        prenom,
+        date_naissance: dateNaissance,
+        sexe,
+        email,
+        mot_de_passe: motDePasse, // Note: En production, il faudrait hasher le mot de passe
+        isLoggedIn: true
       };
 
-      // Stocker les données dans le localStorage
-      localStorage.setItem('userData', JSON.stringify(userData));
+      // Stockage dans localStorage
+      localStorage.setItem('currentUser', JSON.stringify(userData));
+      
+      // Stockage des utilisateurs (pour permettre plusieurs comptes)
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push(userData);
+      localStorage.setItem('users', JSON.stringify(users));
 
-      // Rediriger vers la page de profil
-      window.location.href = 'profil.html';
-    });
+      // Redirection vers le profil
+      window.location.href = 'uti.html';
+    }
   </script>
 </body>
 </html>
